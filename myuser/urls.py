@@ -9,8 +9,8 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    # path("login/"),
-    path('test/',views.auth_test),
+    path('register/',views.user_register),
+    path('verification/',views.user_verification),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('token/verify/', TokenRefreshView.as_view(), name='token_verify'),
