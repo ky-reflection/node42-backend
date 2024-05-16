@@ -1,3 +1,4 @@
+from datetime import timedelta
 import os
 from pathlib import Path
 
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'myuser',
+    'competition',
 ]
 
 AUTH_USER_MODEL = 'myuser.CustomUser'
@@ -80,7 +82,7 @@ DATABASES = {
 SECURE_CONTENT_TYPE_NOSNIFF = False
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
@@ -134,20 +136,19 @@ REST_FRAMEWORK = {
     ),
 }
 
-from datetime import timedelta
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     # 设置token过期时间，上面是5分钟
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     # 设置token刷新过期时间，上面是1天
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
     'UPDATE_LAST_LOGIN': False,
-	#当设置为 时True，auth_user 表中的 last_login 字段在登录时更新 (TokenObtainPairView)。
-    #会更新刷新token
+    # 当设置为 时True，auth_user 表中的 last_login 字段在登录时更新 (TokenObtainPairView)。
+    # 会更新刷新token
     'ALGORITHM': 'HS256',
-    #解码方式hs256
+    # 解码方式hs256
     'SIGNING_KEY': SECRET_KEY,
     'VERIFYING_KEY': None,
     'AUDIENCE': None,
@@ -156,7 +157,7 @@ SIMPLE_JWT = {
     'LEEWAY': 0,
 
     'AUTH_HEADER_TYPES': ('Bearer',),
-    #请求头中协带Authorization: Bearer <token>
+    # 请求头中协带Authorization: Bearer <token>
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
     'USER_ID_FIELD': 'id',
     'USER_ID_CLAIM': 'user_id',
@@ -169,6 +170,6 @@ SIMPLE_JWT = {
     'JTI_CLAIM': 'jti',
 
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=60),
+    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=30),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
