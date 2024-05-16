@@ -21,3 +21,5 @@ jobs:
             cd  ${{ secrets.MK1_BACKEND_PATH }} 
             git pull
             sudo sh start.sh
+            echo "$${{ secrets.MK1_SSHPWD }}" | sudo -S your_command_here
+          
