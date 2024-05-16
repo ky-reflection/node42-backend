@@ -1,4 +1,4 @@
-pip install -r requirements
+pip install -r requirements.txt
 uwsgi --stop /var/www/script/uwsgi.pid
 python3 manage.py makemigrations
 python3 manage.py migrate
