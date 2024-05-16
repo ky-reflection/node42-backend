@@ -20,8 +20,8 @@ jobs:
           script: |
             cd  ${{ secrets.MK1_BACKEND_PATH }} 
             git pull
-            echo "${{ secrets.MK1_SSHPWD }}" |sudo apt-get update
-            echo "${{ secrets.MK1_SSHPWD }}" |sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+            echo "${{ secrets.MK1_SSHPWD }}" |sudo -S apt-get update
+            echo "${{ secrets.MK1_SSHPWD }}" |sudo -S apt-get install python3-dev default-libmysqlclient-dev build-essential
             pip install -r requirements.txt
             echo "${{ secrets.MK1_SSHPWD }}" | sudo -S sh start.sh
           
