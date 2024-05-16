@@ -1,6 +1,6 @@
 from django.db import models
 from myuser.models import CustomUser
-from utils.node42_auth import StageRoleChoices, StageOperations
+from utils.node42_config import StageRoleChoices, StageOperations
 
 import uuid
 

@@ -1,4 +1,20 @@
 from django.db import models
+import filetype
+
+
+class FILE_SIZE_LIMIT:
+    MB = 1024*1024
+    KB = 1024
+    CHART = 1.5*MB
+    AVATA = 2*MB
+    PICTURE = 5*MB
+    MUSIC = 10*MB
+
+
+class FILE_TYPE_LIMIT:
+    # chart=['txt',]
+    PICTURE = ['jpg', 'jpeg', 'png', 'gif']
+    MUSIC = ['mp3', 'ogg', 'wav']
 
 
 class NODE42_AUTH_LEVEL(models.IntegerChoices):

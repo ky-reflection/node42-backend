@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from utils.node42_auth import NODE42_AUTH_LEVEL
+from utils.node42_config import NODE42_AUTH_LEVEL
 import uuid
 # Create your models here.
 

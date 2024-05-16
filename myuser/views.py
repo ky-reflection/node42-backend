@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from .models import CustomUser
 from utils.response import my_json_response
 from utils.user import get_user_from_token, find_user_by_username
-from utils.node42_auth import NODE42_AUTH_LEVEL, is_valid_auth_level
+from utils.node42_config import NODE42_AUTH_LEVEL, is_valid_auth_level
 
 
 def index(request):

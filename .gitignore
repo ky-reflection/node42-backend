@@ -178,3 +178,4 @@ static/
 start_local.sh
 uwsgi_local.ini
 django_start_local.sh
+uwsgi
