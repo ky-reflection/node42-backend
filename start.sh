@@ -13,9 +13,9 @@ if [ -f $UWSGI_PID ]; then
         echo "uWSGI stopped successfully."
     else
         echo "Failed to stop uWSGI. Exit status: $STOP_STATUS"
-        echo "Check uWSGI log for more details: $UWSGI_LOG"
-        cat $UWSGI_LOG
-        exit 1
+        # echo "Check uWSGI log for more details: $UWSGI_LOG"
+        # cat $UWSGI_LOG
+        # exit 1
     fi
 else
     echo "uWSGI PID file not found. It might be already stopped."
