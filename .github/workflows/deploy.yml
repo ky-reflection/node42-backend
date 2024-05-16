@@ -16,6 +16,7 @@ jobs:
           username: ${{ secrets.MK1_USER }}
           port: ${{ secrets.MK1_SSHPORT }}
           key: ${{ secrets.MK1_SSHPUB }}
+          password: ${{ secrets.MK1_SSHPWD }}
           script: |
             cd  ${{ secrets.MK1_BACKEND_PATH }} 
             git pull
