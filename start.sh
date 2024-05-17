@@ -49,3 +49,16 @@ fi
 
 # 启动 uWSGI 服务
 echo "Starting uWSGI..."
+uwsgi --ini uwsgi.ini &
+START_STATUS=$?
+
+if [ $START_STATUS -eq 0 ]; then
+    echo "uWSGI started successfully."
+else
+    echo "Failed to start uWSGI. Exit status: $START_STATUS"
+    echo "Check uWSGI log for more details: $UWSGI_LOG"
+    cat $UWSGI_LOG
+    exit 1
+fi
+
+echo "Deployment script completed."
