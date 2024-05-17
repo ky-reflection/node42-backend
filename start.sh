@@ -49,7 +49,7 @@ fi
 
 # 启动 uWSGI 服务
 echo "Starting uWSGI..."
-uwsgi --ini uwsgi.ini &
+nohup uwsgi --ini uwsgi.ini &
 START_STATUS=$?
 
 if [ $START_STATUS -eq 0 ]; then

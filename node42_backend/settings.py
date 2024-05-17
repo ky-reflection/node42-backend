@@ -15,7 +15,9 @@ SECRET_KEY = 'django-insecure-qctn7+um#iobag(=fh9wkp_(jmw2g&0_rem_7gf3gmwkux26he
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'node42.kyreflection.com'
+]
 
 
 # Application definition
