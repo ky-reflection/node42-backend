@@ -17,6 +17,7 @@ jobs:
           port: ${{ secrets.MK1_SSHPORT }}
           key: ${{ secrets.MK1_SSHPUB }}
           password: ${{ secrets.MK1_SSHPWD }}
+          script_stop: true
           script: |
             cd  ${{ secrets.MK1_BACKEND_PATH }} 
             git pull
@@ -24,4 +25,3 @@ jobs:
             echo "${{ secrets.MK1_SSHPWD }}" |sudo -S apt-get install python3-dev default-libmysqlclient-dev build-essential
             pip install -r requirements.txt
             sh start.sh
-          
